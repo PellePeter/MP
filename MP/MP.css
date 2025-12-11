@@ -1,0 +1,242 @@
+html{
+    scroll-behavior: smooth;
+}
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+    background-color: #000000;
+    color: #ffffff;
+}
+#MenuBar {
+    position: fixed;
+    top: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 40px;
+    background-color: #3e3c3c;
+    border-radius: 20px;
+    height: 40px;
+    width: 100%;
+    z-index: 1000;
+}
+#options{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    position: center;
+    padding: 15px 0;
+    width: 80%;
+    margin-left: 300px;
+}
+/* Kék kiemelés eltüntetése */
+.menu-item a {
+    color: #ffffff;
+    text-decoration: none;
+    transition: 0.2s;
+}
+
+.search_bar {
+    width: 400px;
+    height: auto;
+    padding: 3px;
+    border-radius: 50px;
+    background-color: #000000;
+    border: 3px solid #555;
+    transition: all 0.3s ease;
+
+}
+
+.search_bar:hover {
+    background: linear-gradient(#000000, #000000) padding-box,
+                linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%) border-box;
+    border: 3px solid transparent;
+}
+
+.search_bar input {
+    width: 360px;
+    padding: 15px 20px;
+    border: none;
+    border-radius: 50px;
+    font-size: 18px;
+    background-color: #1a1a1a;
+    color: #ffffff;
+    box-sizing: border-box;
+}
+/******************************************************************Bevásárlókocsi**************************************************************/
+.cart-icon {
+  position: fixed;
+  left: 40px; 
+  top: 25px; 
+  box-align: center;
+  width: 20px;
+  height: 30px;
+  margin-left: 20px;
+  cursor: pointer;
+  z-index: 1001; /* Ensure it stays above other elements */
+}
+/******************************************************************Bevásárlókocsi**************************************************************/
+/******************************************************************Your_MP_mozgás**************************************************************/
+.key {
+    font-size: 2rem;
+    display: inline-block;
+    letter-spacing: 0.1px;
+    transition: transform 0.2s;
+  }
+.key {
+    font-size: 2rem;
+    display: inline-block;
+    letter-spacing: -6px; /* Adjusted to make letters closer */
+    transition: transform 0.2s;
+}
+  
+  
+  @keyframes pressDown1 {
+    30%,
+    40%,
+    100% {
+      transform: translateY(0);
+    }
+    35% {
+      transform: translateY(10px);
+    }
+  }
+  
+  @keyframes pressDown2 {
+    70%,
+    80%,
+    100% {
+      transform: translateY(0);
+    }
+    75% {
+      transform: translateY(10px);
+    }
+  }
+  
+  @keyframes pressDown3 {
+    30%,
+    40%,
+    100% {
+      transform: translateY(0);
+    }
+    35% {
+      transform: translateY(10px);
+    }
+  }
+  
+  @keyframes pressDown4 {
+    40%,
+    50%,
+    100% {
+      transform: translateY(0);
+    }
+    45% {
+      transform: translateY(10px);
+    }
+  }
+  
+  @keyframes pressDown5 {
+    20%,
+    30%,
+    100% {
+      transform: translateY(0);
+    }
+    25% {
+      transform: translateY(10px);
+    }
+  }
+  
+  @keyframes pressDown6 {
+    60%,
+    70%,
+    100% {
+      transform: translateY(0);
+    }
+    65% {
+      transform: translateY(10px);
+    }
+  }
+  
+  @keyframes pressDown7 {
+    10%,
+    20%,
+    100% {
+      transform: translateY(0);
+    }
+    15% {
+      transform: translateY(10px);
+    }
+  }
+  
+  @keyframes pressDown8 {
+    35%,
+    45%,
+    100% {
+      transform: translateY(0);
+    }
+    40% {
+      transform: translateY(10px);
+    }
+  }
+  
+  
+  
+  .key:nth-child(1) {
+    animation: pressDown1 2s infinite;
+  }
+  
+  .key:nth-child(2) {
+    animation: pressDown2 3s infinite;
+  }
+  
+  .key:nth-child(3) {
+    animation: pressDown3 4s infinite;
+  }
+  
+  .key:nth-child(4) {
+    animation: pressDown4 2.5s infinite;
+  }
+  
+  .key:nth-child(5) {
+    animation: pressDown5 2.5s infinite;
+  }
+  
+  .key:nth-child(6) {
+    animation: pressDown6 3.5s infinite;
+  }
+  
+  .key:nth-child(7) {
+    animation: pressDown7 2.2s infinite;
+  }
+  
+  .key:nth-child(8) {
+    animation: pressDown8 3.2s infinite;
+  }
+  
+  b {
+    text-decoration: none;
+    font-family: "IBM Plex Sans", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    color: white;
+    background-color: black;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 2px;
+    padding: 5px 10px;
+    transition: 0.1s all ease-in;
+  }
+  
+  b:nth-child(1):hover {
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    box-shadow: 0px 2px 0 #349eff;
+  }
+  
+  b:nth-child(2):hover {
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    box-shadow: 0px 2px 0 #ff5757;
+  }
+/******************************************************************Your_MP_mozgás**************************************************************/
