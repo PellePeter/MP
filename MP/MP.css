@@ -2,85 +2,196 @@ html{
     scroll-behavior: smooth;
 }
 body {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Arial', sans-serif;
-    background-color: #000000;
-    color: #ffffff;
+  margin: 0;
+  padding: 0;
+  
+  font-family: 'Arial', sans-serif;
+  background-color: #000000;
+  color: #ffffff;
 }
 #MenuBar {
+  position: fixed;
+  top: 0px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* bal ↔ jobb */
+  padding: 15px 40px;
+  background-color: #3e3c3c;
+  border-radius: 20px;
+  height: 40px;
+  width: 95%;
+  z-index: 1000;
+}
+
+#options {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+}
+
+/* Kék kiemelés eltüntetése */
+.menu-item a {
+  color: #ffffff;
+  text-decoration: none;
+  transition: 0.2s;
+}
+#search_bar {
+  width: 400px;
+  border-radius: 50px;
+  background-color: #000000;
+  border: 3px solid #555;
+  transition: all 0.3s ease;
+  margin-right: -30px;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+#search_bar:hover {
+  background: linear-gradient(#1a1a1a, #1a1a1a) padding-box,
+              linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%) border-box;
+  border: 3px solid transparent;
+}
+#search_bar input {
+  width: 100%;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 50px;
+  font-size: 18px;
+  background-color: #1a1a1a;
+  color: #ffffff;
+  box-sizing: border-box;
+}
+/*********************************************************************Gombok****************************************************************/
+.buttons {
+  display: flex;
+  gap: 10px; 
+  align-items: center;
+}
+.buttons a {
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  text-decoration: none;
+  cursor: pointer;
+}
+.buttons a:hover {
+  color: #4176ac;
+  transform: scale(1.2);
+  text-shadow: 0 0 8px #4176ac; 
+}
+/*.buttons a {
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  text-decoration: none;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+/* Hover: kék glow */
+/*.buttons a:hover {
+  background-color: #1e90ff; 
+  box-shadow: 0 0 10px #1e90ff, 0 0 20px #00bfff, 0 0 30px #87cefa;
+  transform: scale(1.2);
+  color: #ffffff;
+}
+˛*/
+#cart-icon {
+  position: relative;
+}
+
+#cart-count {
+  position: absolute;
+  top: -8px;
+  right: -10px;
+  background-color: #4176ac;
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 2px 6px;
+  border-radius: 50%;
+}
+/* Kosár sidebar */
+#cart-sidebar {
     position: fixed;
-    top: 30px;
-    left: 50%;
-    transform: translateX(-50%);
+    top: 0;
+    right: -100%; /* alapból rejtett */
+    width: 33.333vw;
+    max-width: 400px;
+    height: 100vh;
+    background-color: #1a1a1a;
+    box-shadow: -2px 0 10px rgba(0,0,0,0.5);
+    transition: right 0.3s ease;
+    padding: 20px;
+    z-index: 10000;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Bezáró X gomb fixen a jobb felső sarokban */
+#close-cart {
+    font-size: 25px;
+    color: #ffffff;
+    cursor: pointer;
+    align-self: flex-end; /* jobb oldalra tolja */
+    margin-bottom: 20px;
+}
+
+/* Kosár tételek */
+.cart-item {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px 40px;
-    background-color: #3e3c3c;
-    border-radius: 20px;
-    height: 40px;
-    width: 100%;
-    z-index: 1000;
+    margin-bottom: 15px;
+    gap: 10px;
 }
-#options{
+
+.cart-item img {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.cart-item-info {
+    flex: 1;
+    margin-left: 10px;
+}
+
+/* Gombok egymás mellett, a sidebar jobb szélén */
+.cart-item-controls {
     display: flex;
-    align-items: center;
-    justify-content: space-around;
-    position: center;
-    padding: 15px 0;
-    width: 80%;
-    margin-left: 300px;
-}
-/* Kék kiemelés eltüntetése */
-.menu-item a {
-    color: #ffffff;
-    text-decoration: none;
-    transition: 0.2s;
+    gap: 5px;
 }
 
-.search_bar {
-    width: 400px;
-    height: auto;
-    padding: 3px;
-    border-radius: 50px;
-    background-color: #000000;
-    border: 3px solid #555;
-    transition: all 0.3s ease;
-
-}
-
-.search_bar:hover {
-    background: linear-gradient(#000000, #000000) padding-box,
-                linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%) border-box;
-    border: 3px solid transparent;
-}
-
-.search_bar input {
-    width: 360px;
-    padding: 15px 20px;
+.cart-item-controls button {
+    background-color: #4176ac;
+    color: white;
     border: none;
-    border-radius: 50px;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+#cart-total {
     font-size: 18px;
-    background-color: #1a1a1a;
-    color: #ffffff;
-    box-sizing: border-box;
+    font-weight: bold;
+    margin-top: auto;
 }
-/******************************************************************Bevásárlókocsi**************************************************************/
-.cart-icon {
-  position: fixed;
-  left: 40px; 
-  top: 25px; 
-  box-align: center;
-  width: 20px;
-  height: 30px;
-  margin-left: 20px;
-  cursor: pointer;
-  z-index: 1001; /* Ensure it stays above other elements */
-}
-/******************************************************************Bevásárlókocsi**************************************************************/
-/******************************************************************Your_MP_mozgás**************************************************************/
+
+/*********************************************************************Gombok****************************************************************/
+/****************************************************************Your_MP_mozgás*************************************************************/
 .key {
     font-size: 2rem;
     display: inline-block;
@@ -232,11 +343,142 @@ body {
   
   b:nth-child(1):hover {
     border: 1px solid rgba(255, 255, 255, 0.4);
-    box-shadow: 0px 2px 0 #349eff;
+    box-shadow: 0px 2px 0 #4176ac;
   }
   
   b:nth-child(2):hover {
     border: 1px solid rgba(255, 255, 255, 0.4);
     box-shadow: 0px 2px 0 #ff5757;
   }
-/******************************************************************Your_MP_mozgás**************************************************************/
+/****************************************************************Your_MP_mozgás*************************************************************/
+/********************************************************************Nem választás**********************************************************/
+#nemválasztás {
+  margin-top: 120px;
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+}
+#nemválasztás a{
+  text-decoration: none;
+  color: #ffffff
+}
+#ferfi{
+  width: 160px;
+  height: 80px;
+  background-color: #3e3c3c;
+  border-radius: 20px;    
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  cursor: pointer;
+  transition: 0.3s;
+  font-weight: bold;
+}
+#no {
+  width: 160px;
+  height: 80px;
+  background-color: #3e3c3c;
+  border-radius: 20px;      
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  cursor: pointer;
+  transition: 0.3s;
+  font-weight: bold;
+}
+#ferfi:hover{
+  background-color: #555;
+  transform: scale(1.05);
+}
+#no:hover {
+  background-color: #555;
+  transform: scale(1.05);
+}
+
+/***********************************************************************Nem választás********************************************************/
+/**********************************************************************Callout***************************************************************/
+.callout {
+  position: fixed;
+  bottom: 35px;
+  right: 20px;
+  max-width: 300px;
+  border-radius: 20px;
+  overflow: hidden;       /* a belső részek ne lógjanak ki */
+  z-index: 9999;  
+  border: 2px solid black;
+}
+.callout-header {
+  padding: 25px 15px;
+  background: #3e3c3c;
+  font-size: 30px;
+  color: #ffffff;
+}
+.callout-container {
+  padding: 15px;
+  background-color: #4176ac;
+  color: #ffffff;
+}
+.closebtn {
+  position: absolute;
+  top: 5px;
+  right: 15px;
+  color: #ffffff;
+  font-size: 30px;
+  cursor: pointer;
+}
+.closebtn:hover {
+  color: #FF0000;
+}
+/**********************************************************************Callout***************************************************************/
+/******************************************************************Termékek******************************************************************/
+.termekek-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+  padding: 0 40px; /* vízszintes padding, ne margin-top, margin-left */
+  margin-top: 20px;
+}
+.termekek {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  background-color: #1a1a1a;
+  border-radius: 15px;
+  overflow: hidden;
+  text-align: center;
+}
+.ar {
+  color: grey;
+  font-size: 22px;
+}
+.termekek button {
+  border: none;
+  outline: 0;
+  padding: 12px;
+  color: #ffffff;
+  background-color: #4176ac;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  font-size: 18px;
+}
+.ar button:hover {
+  opacity: 0.7;
+}
+.termek-felirat {
+  color: #ffffff;
+  font-size: 20px;
+  font-weight: bold;
+  margin-left: 40px; 
+  margin-top: 30px;
+  margin-bottom: 10px;
+}
+#ferfi-termekek{
+    padding-top: 120px; 
+    margin-top: -120px;   
+}
+#noi-termekek {
+    padding-top: 120px;
+    margin-top: -120px;  
+}
+/******************************************************************Termékek******************************************************************/

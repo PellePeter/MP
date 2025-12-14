@@ -6,10 +6,29 @@
     <link rel="stylesheet" href="MP.css">
     <link rel="icon" href="logo_circle.png">
     <title>Your_MP</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
+    <div class="callout">
+        <div class="callout-header">AKCIÓ!</div>
+            <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+            <div class="callout-container">
+                <p>
+                    Minden termékre 10% kedvezmény<br>
+                    Használd a MP10 kuponkódot
+                </p>
+            </div>
+    </div>
     <div id="MenuBar">
-        <!--<a href="MP.html"><img src="logo.jpeg"></a>-->
+        <div id="buttons" class="buttons">
+            <a href="PROFILE.html"><i class="fa fa-user-o"></i></a>
+            <a href="LIKE.HTML"><i class="fa fa-heart-o"></i></a>
+            <a href="#" id="cart-icon">
+            <i class="fa fa-shopping-cart"></i> <span id="cart-count">0</span>
+            </a>
+
+        </div>
+        </div>
         <div id="options">
             <div id="nev">
                 <h2 class="menu-item"><a href="#Name">                
@@ -21,15 +40,94 @@
                     <span class="key">M</span>
                     <span class="key">P</span></a>                
                 </h2>
-              </div>
+            </div>
         </div>
-        <div class="search_bar">
+        <div id="search_bar">
             <input type="text" placeholder="Keresés">
         </div>
-        <div id="buttons" class="buttons">
-            <a class="cart-icon" href="CART.html"><img src="cart logo.svg"></a>
-            <a class="profil-icon" href="PROFILE.html"><img src="profile.svg"></a>
-            <a class="like-icon" href="LIKE.HTML"><img src="" alt=""></a>
-        </div>
     </div>
+    <div id="nemválasztás">
+    <a href="#ferfi-termekek" id="ferfi">
+        <p>Férfi</p>
+    </a>
+    <a href="#noi-termekek" id="no">
+        <p>Nő</p>
+    </a>
+    </div>
+    <h2 class="termek-felirat">Férfi</h2>
+<div class="termekek-container" id="ferfi-termekek">
+    <div class="termekek">
+        <img src="polo.jpg" style="width:100%">
+        <h1>Fekete GymShark rövidujju polo</h1>
+        <p class="ar">10 000 Ft</p>
+        <p></p>
+        <p><button>Kosárba helyezés</button></p>
+    </div>
+
+    <div class="termekek">
+        <img src="pulcsi.jpg" style="width:100%">
+        <h1>Fekete GymShark pulcsi</h1>
+        <p class="ar">20 900 Ft</p>
+        <p></p>
+        <p><button>Kosárba helyezés</button></p>
+    </div>
+
+    <div class="termekek">
+        <img src="triko.jpg" style="width:100%">
+        <h1>Fekete GymShark triko</h1>
+        <p class="ar">8 900 Ft</p>
+        <p></p>
+        <p><button>Kosárba helyezés</button></p>
+    </div>
+
+    <div class="termekek">
+        <img src="hoszu.jpg" style="width:100%">
+        <h1>Fekete GymShark hosszuujju</h1>
+        <p class="ar">12 000 Ft</p>
+        <p></p>
+        <p><button>Kosárba helyezés</button></p>
+    </div>
+</div>
+
+<h2 class="termek-felirat">Nő</h2>
+<div class="termekek-container" id="noi-termekek">
+    <div class="termekek">
+        <img src="nadrag.jpg" style="width:100%">
+        <h1>Fekete Myprotein leggings</h1>
+        <p class="ar">8 000 Ft</p>
+        <p></p>
+        <p><button>Kosárba helyezést</button></p>
+    </div>
+    <div class="termekek">
+        <img src="nadrag1.jpg" style="width:100%">
+        <h1>Bibor Myprotein leggings</h1>
+        <p class="ar">8 000 Ft</p>
+        <p></p>
+        <p><button>Kosárba helyezés</button></p>
+    </div>
+    <div class="termekek">
+        <img src="melltarto.jpg" style="width:100%">
+        <h1>Szürke Myprotein melltartó</h1>
+        <p class="ar">5 000 Ft</p>
+        <p></p>
+        <p><button>Kosárba helyezés</button></p>
+    </div>
+    <div class="termekek">
+        <img src="melegito.jpg" style="width:100%">
+        <h1>Fehér Myprotein melegitő</h1>
+        <p class="ar">12 000 Ft</p>
+        <p></p>
+        <p><button>Kosárba helyezés</button></p>
+    </div>
+</div>
+<div id="cart-overlay"></div>
+<div id="cart-sidebar">
+    <h2>
+        Kosár
+        <span class="close-cart-btn">&times;</span>
+    </h2>
+    <div id="cart-items"></div>
+    <p id="cart-total">Összesen: 0 Ft</p>
+</div>
+<script src="MP.js"></script>
 </body>
